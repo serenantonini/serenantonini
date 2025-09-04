@@ -1,0 +1,39 @@
+:root {
+  --black: #000;
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  transition: opacity .45s ease, visibility .45s ease;
+}
+
+.intro-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro-wrap {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.intro-svg {
+  width: 300px;
+  height: 300px;
+  display: block;
+  transform-origin: 50% 50%;
+}
+
+/* --- Responsive --- */
+@media (min-width: 900px) {
+  .intro-svg {
+    width: 400px;
+    height: 400px;
+  }
+}

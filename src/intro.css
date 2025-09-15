@@ -31,7 +31,7 @@
 }
 
 .intro-texts {
-  margin-top: -47px; /* distanza minima dal cerchio */
+  margin-top: -32px; /* distanza minima dal cerchio */
   display: flex;
   flex-direction: column;
   gap: 0; /* distanza minima tra le due scritte */
@@ -83,4 +83,8 @@
   .intro-sub {
     font-size: 1.2rem;
   }
+  .intro-texts {
+    margin-top: -47px; /* distanza minima dal cerchio */
+
+}
 }

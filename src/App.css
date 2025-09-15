@@ -304,40 +304,42 @@ body {
   }
 }
 
-
-
+.navbar button:focus,
+.navbar button:active {
+  outline: none;
+  box-shadow: none;
+}
 
 /* HERO: testo a sinistra, logo a destra */
 .hero {
-  padding: 120px 0 20px;
+  padding: 100px 0 40px;  /* spazio bilanciato */
   position: relative;
-  min-height: 80vh;
   margin-top: 20px;
 }
 
 .hero-content {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:32px;
-  flex-wrap:wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .hero-text {
   flex: 1 1 420px;
-  min-width:280px;
+  min-width: 280px;
 }
 
 .hero-image {
   flex: 1 1 380px;
-  min-width:260px;
-  display:flex;
-  justify-content:center;
+  min-width: 260px;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-image img {
   width: min(360px, 100%);
-  height:auto;
+  height: auto;
 }
 
 /* TESTI */
@@ -345,7 +347,7 @@ body {
   color: var(--hero-intro);
   letter-spacing: 2px;
   font-weight: 700;
-  margin:0 0 8px;
+  margin: 0 0 8px;
 }
 
 .highlight {
@@ -385,13 +387,40 @@ h1 {
 }
 
 @keyframes shine {
-  to { background-position: 200% center; }
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* MOBILE: nascondi immagine */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .hero-image {
     display: none !important;
+  }
+
+  .hero {
+    padding: 60px 0 30px; /* meno spazio sopra/sotto */
+  }
+
+  .hero-content {
+    gap: 16px;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    max-width: 100%;
   }
 }
 
@@ -448,6 +477,7 @@ h1 {
   padding:20px; 
   border-radius:12px; 
 }
+
 
 
 
@@ -810,3 +840,53 @@ h1 {
   .hero-image { align-self:center; }
   .hero { padding-top: 60px; padding-bottom: 0px; }
 }
+
+
+/* MOBILE EXTRA SMALL: sotto 380px */
+@media (max-width: 380px) {
+
+  /* Hero */
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-text {
+    min-width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  /* Navbar links più stretti */
+  .nav-links {
+    width: 220px; /* menu mobile più piccolo */
+    padding: 50px 20px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  /* Bottoni più piccoli */
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Footer logo più piccolo */
+  .footer-logo img {
+    max-width: 240px;
+  }
+}
+
+

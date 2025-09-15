@@ -1,9 +1,14 @@
-export default function Footer() {
+import { useState } from "react";
+
+export default function Footer({ isLight }) {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-logo">
-          <img src="/logo-nero.png" alt="Logo Serena Antonini" />
+          <img 
+            src={isLight ? "/logo-bianco.png" : "/logo-nero.png"} 
+            alt="Logo Serena Antonini" 
+          />
         </div>
         <div className="footer-info">
           <p>

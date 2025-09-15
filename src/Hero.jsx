@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ isLight }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -89,21 +89,26 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Logo Hero */}
-        <motion.div
-          className="hero-image flex-1 min-w-[260px] flex justify-center md:justify-end h-full"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 1.2, type: "spring", stiffness: 100 }}
-          style={{ x: offset.x, y: offset.y }}
-        >
-          <img
-            //src="/logo-nero.png"
-            src="/logo-nero.png"
-            alt="Serena Logo"
-            className="h-full w-auto max-w-full rounded-xl shadow-xl hover:scale-105 transition-transform duration-500"
-          />
-        </motion.div>
+{/* Logo Hero */}
+<motion.div
+  className="hero-image flex-1 min-w-[260px] hidden md:flex justify-center md:justify-end h-full"
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{
+    duration: 1.2,
+    delay: 1.2,
+    type: "spring",
+    stiffness: 100,
+  }}
+  style={{ x: offset.x, y: offset.y }}
+>
+  <img
+    src={isLight ? "/logo-bianco.png" : "/logo-nero.png"}
+    alt="Serena Logo"
+    className="h-full w-auto max-w-full rounded-xl shadow-xl hover:scale-105 transition-transform duration-500"
+  />
+</motion.div>
+
 
       </div>
 
